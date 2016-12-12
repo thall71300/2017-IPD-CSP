@@ -111,23 +111,10 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     # This example player always colludes
     if player == 0:
         if getting_team_name:
-            return 'doc holiday'
+            return 'loyal'
         else:
-            # use history, opponent_history, score, opponent_score
-            # to compute your strategy
-           if len(opponent_history)==0: #It's the first round: betrayal
-                return 'b'
-           else:
-                size = len(history)
-                if(size%3==0): #the number of rounds played is a multiple of 3
-                    return 'b'
-                else:
-                    if opponent_history > 0 =='c':
-                        return 'c'
-                        if opponent_history > 0 =='b':
-                            return 'b'
-                        else:
-                            return 'b'
+            return 'c'
+
 
     
         
