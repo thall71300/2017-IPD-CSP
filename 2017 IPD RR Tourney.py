@@ -141,10 +141,15 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #This example player always betrays.      
     elif player == 1:
         if getting_team_name:
-            return 'backstabber'
+            return 'proigrayesh'
         else:
-            return 'b'
-
+            if len(opponent_history) ==0:
+                return 'b'
+            else:
+                if opponent_history == 'c':
+                    return 'b'
+                else:
+                    return 'c'
 
 
 
