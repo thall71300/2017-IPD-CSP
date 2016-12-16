@@ -277,16 +277,20 @@ def get_action(player, history, opponent_history, score, opponent_score, getting
     #
     elif player == 7:
         if getting_team_name:
-            return 'loyal vengeful'
+            return 'TwoHeadedGolocktopus'
         else:
             # use history, opponent_history, score, opponent_score
             # to compute your strategy
             if len(opponent_history)==0: #It's the first round: collude
                 return 'c'
-            elif history[-1]=='c' and opponent_history[-1]=='b':
-                return 'b' # betray is they were sucker last time
+            if len(opponent_history)=='b':
+                return 'b'
             else:
-                return 'c' #otherwise collude
+                return 'b'
+            if len(opponent_history)=='c':
+                return 'b'
+            else:
+                return 'c'
 
 
 
